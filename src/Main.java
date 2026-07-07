@@ -17,7 +17,7 @@ public class Main {
 
         }
 
-         bobblesort(array);
+  selectionsort(array);
         System.out.print("[");
         for (int i:
              array) {
@@ -32,18 +32,23 @@ scanner.close();
 
     }
 
-    private static void bobblesort(int[] array) {
-        for (int i = 0; i < array.length-1; i++) {
-            for (int j = 0; j < array.length-1; j++) {
-               if (array[j] > array[j+1]){
-                  int tepm = array[j];
-                  array[j]= array[j+1];
-                  array[j+1]= tepm;
+    private static void selectionsort(int[] array) {
+        for (int i = 0; i < array.length-1 ; i++) {
+             int mini =i;
+            for (int j = i+1; j < array.length ; j++) {
+                if (array[j] > array[mini]) {
+                    mini = j;
 
+                }
             }
+
+                  int temp = array[mini];
+                 array[mini]= array[i];
+                 array[i] =temp;
 
         }
     }
 
-    }
+
 }
+

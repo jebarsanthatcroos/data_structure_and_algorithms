@@ -17,7 +17,7 @@ public class Main {
 
         }
 
-  selectionsort(array);
+ insertionSort(array);
         System.out.print("[");
         for (int i:
              array) {
@@ -32,19 +32,18 @@ scanner.close();
 
     }
 
-    private static void selectionsort(int[] array) {
-        for (int i = 0; i < array.length-1 ; i++) {
-             int mini =i;
-            for (int j = i+1; j < array.length ; j++) {
-                if (array[j] > array[mini]) {
-                    mini = j;
+    private static void insertionSort(int[] array) {
 
-                }
-            }
+        for (int i = 1; i < array.length ; i++) {
+             int temp = array[i];
+              int j = i-1;
 
-                  int temp = array[mini];
-                 array[mini]= array[i];
-                 array[i] =temp;
+              while ( j>=0 && array[j]< temp){
+                 array [j+1] = array[j];
+                 j --;
+
+              }
+               array[j+1]= temp;
 
         }
     }

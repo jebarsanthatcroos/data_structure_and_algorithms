@@ -9,7 +9,7 @@ public class Main {
         System.out.print("enter the size :");
          int size = scanner.nextInt();
         int []array = new  int[size];
-        Queue queue =new Queue(size);
+        CircularQueue circularqueue=new CircularQueue(size);
 
 
         for (int i = 0; i <size; i++) {
@@ -19,18 +19,18 @@ public class Main {
         }
         for (int i:
              array) {
-            queue.Enqueue(i);
+            circularqueue.Enqueue(i);
 
         }
         System.out.println("  display the Queue elements");
-        queue.Display();
+        circularqueue.Display();
 
-        System.out.println( "front element is:"+queue.frontElement());
+        System.out.println( "front element is:"+circularqueue.frontElement());
 
-        queue.Dequeue();
+        circularqueue.Dequeue();
 
         System.out.println(" Remaining elements");
-        queue.Display();
+        circularqueue.Display();
 
 scanner.close();
 

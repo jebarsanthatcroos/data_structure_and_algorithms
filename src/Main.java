@@ -9,7 +9,7 @@ public class Main {
         System.out.print("enter the size :");
          int size = scanner.nextInt();
         int []array = new  int[size];
-        stack s =new stack(size);
+        Queue queue =new Queue(size);
 
 
         for (int i = 0; i <size; i++) {
@@ -19,18 +19,18 @@ public class Main {
         }
         for (int i:
              array) {
-            s.push(i);
+            queue.Enqueue(i);
 
         }
-        System.out.println("  display the  stack data");
-          s.Display();
+        System.out.println("  display the Queue elements");
+        queue.Display();
 
-        System.out.println( "front element is:"+s.peek());
+        System.out.println( "front element is:"+queue.frontElement());
 
-s.pop();
+        queue.Dequeue();
 
-        System.out.println("  display the   afate stack data");
-s.Display();
+        System.out.println(" Remaining elements");
+        queue.Display();
 
 scanner.close();
 

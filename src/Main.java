@@ -9,7 +9,6 @@ public class Main {
         System.out.print("enter the size :");
          int size = scanner.nextInt();
         int []array = new  int[size];
-        CircularQueue circularqueue=new CircularQueue(size);
 
 
         for (int i = 0; i <size; i++) {
@@ -17,23 +16,34 @@ public class Main {
             array[i] = scanner.nextInt();
 
         }
+
+         bobblesort(array);
+        System.out.print("[");
         for (int i:
              array) {
-            circularqueue.Enqueue(i);
+            System.out.print(" "+i);
 
         }
-        System.out.println("  display the Queue elements");
-        circularqueue.Display();
+        System.out.print("]");
+        System.out.println();
 
-        System.out.println( "front element is:"+circularqueue.frontElement());
-
-        circularqueue.Dequeue();
-
-        System.out.println(" Remaining elements");
-        circularqueue.Display();
 
 scanner.close();
 
     }
 
+    private static void bobblesort(int[] array) {
+        for (int i = 0; i < array.length-1; i++) {
+            for (int j = 0; j < array.length-1; j++) {
+               if (array[j] > array[j+1]){
+                  int tepm = array[j];
+                  array[j]= array[j+1];
+                  array[j+1]= tepm;
+
+            }
+
+        }
+    }
+
+    }
 }
